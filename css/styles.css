@@ -1,0 +1,35 @@
+body {
+  background-color: #333;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.gallery {
+  column-count: 5;
+  column-width: 200px;
+}
+
+.gallery__item {
+  position: relative;
+}
+
+.gallery__title {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: bisque;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.gallery__link {
+  text-decoration: none;
+  color: inherit;
+}
