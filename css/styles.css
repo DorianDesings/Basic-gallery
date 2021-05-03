@@ -16,6 +16,13 @@ img {
 
 .gallery__item {
   position: relative;
+  filter: grayscale(1);
+  transition: filter 0.3s;
+  overflow: hidden;
+}
+
+.gallery__item:hover {
+  filter: grayscale(0);
 }
 
 .gallery__title {
@@ -32,4 +39,48 @@ img {
 .gallery__link {
   text-decoration: none;
   color: inherit;
+}
+
+.gallery__img {
+  transition: transform 0.3s, filter 0.3s;
+  filter: blur(5px);
+}
+
+.gallery__img:hover {
+  filter: blur(0);
+  transform: scale(1.5) rotate(25deg);
+}
+
+.gallery__description {
+  font-size: 2rem;
+  color: #fff;
+  position: absolute;
+  transition: transform 0.3s;
+}
+
+.gallery__item:hover .gallery__description {
+  transform: translateY(-145%);
+}
+
+.gallery__modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgb(0 0 0 / 0.8);
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  display: grid;
+  place-items: center;
+  transform: scale(0);
+  transition: transform 0.3s;
+}
+
+.gallery__modal img {
+  max-width: 500px;
+}
+
+.gallery__modal--show {
+  transform: scale(1);
 }
